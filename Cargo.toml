@@ -1,0 +1,22 @@
+[package]
+name = "hyper-stub"
+version = "0.1.0"
+authors = ["Alyssa Ross <hi@alyssa.is>"]
+description = "hyper clients that don't touch the network."
+repository = "https://github.com/alyssais/hyper-stub"
+keywords = ["hyper", "stub", "in-memory", "testing", "proxy"]
+categories = [
+  "asynchronous",
+  "network-programming",
+  "web-programming::http-client",
+  "web-programming::http-server",
+  "development-tools::testing",
+]
+license = "MPL-2.0"
+readme = "README.md"
+
+[dependencies]
+futures = "0.1.21"
+hyper = "0.12.1"
+memsocket = "0.1.3"
+tokio = "0.1.7"

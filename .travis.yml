@@ -1,0 +1,18 @@
+language: rust
+cache: cargo
+matrix:
+  include:
+    - rust: stable
+      before_install: rustup component add rustfmt-preview
+      script:
+        - cargo test --verbose
+        - cargo fmt -- --write-mode diff
+    - rust: beta
+    - rust: nightly
+      before_install: cargo install clippy
+      script:
+        - cargo test --verbose
+        - cargo clippy
+  allow_failures:
+    - rust: nightly
+  fast_finish: true
